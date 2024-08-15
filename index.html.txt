@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft İksir Yapımı</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        .content {
+            margin: 20px 0;
+        }
+        h2 {
+            color: #4CAF50;
+        }
+        .comment-section {
+            background: #fff;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .comment-section h2 {
+            margin-top: 0;
+        }
+        .comment-form input, .comment-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .comment-form button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .comment-form button:hover {
+            background-color: #45a049;
+        }
+        .comments-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .comments-list li {
+            background: #eee;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Minecraft İksir Yapımı</h1>
+    </header>
+
+    <div class="container">
+        <div class="content">
+            <h2>İksirler Nasıl Yapılır?</h2>
+            <p>Minecraft'ta iksirler, çeşitli etkiler sağlayarak oyuncunun oyun deneyimini zenginleştirebilir. İksirlerin yapımı için aşağıdaki adımları izleyebilirsiniz:</p>
+
+            <h3>Temel Araçlar ve Malzemeler</h3>
+            <ul>
+                <li><strong>İksir Standı:</strong> İksir yapmak için kullanılan ana araçtır. Nether Yıldızı ve Kova ile yapılır.</li>
+                <li><strong>Su Şişesi:</strong> İksir yapmak için temel bileşendir. Su dolu şişeler kullanılır.</li>
+                <li><strong>Blaze Tozu:</strong> İksirlerin temel bileşeni. Blaze Rod'larından elde edilir.</li>
+                <li><strong>Ağaç Meyvesi:</strong> İksirlerin etkisini artırmak için kullanılan malzemedir.</li>
+                <li><strong>Kırmızı Taş Tozu:</strong> İksirlerin süresini uzatmak için kullanılır.</li>
+                <li><strong>Şeker:</strong> Hız artırıcı iksirlerin yapımında kullanılır.</li>
+                <li><strong>Gölge Tozu:</strong> Görünmezlik iksirlerinin yapımında kullanılır.</li>
+            </ul>
+
+            <h3>İksir Yapma Süreci</h3>
+            <ol>
+                <li><strong>Su Şişelerini Ekleme:</strong> İksir standına su şişelerini yerleştirin. Su şişeleri, iksirlerin temel bileşenidir.</li>
+                <li><strong>Ana Bileşen Eklemek:</strong> İksir standına ana bileşenleri ekleyin. Örneğin, Blaze Tozu veya Nether Yıldızı.</li>
+                <li><strong>Ek Bileşenler Eklemek:</strong> İksirin türünü ve etkilerini değiştirmek için ek bileşenler ekleyin. Örneğin, Kırmızı Taş Tozu veya Şeker.</li>
+            </ol>
+
+            <h3>Örnek İksir Tarifleri</h3>
+            <ul>
+                <li><strong>Hızlandırma İksiri:</strong> Su şişesine Şeker ekleyin. Hız artırıcı etkisi sağlar.</li>
+                <li><strong>Görünmezlik İksiri:</strong> Su şişesine Gölge Tozu ekleyin. Görünmezlik sağlar.</li>
+                <li><strong>Güç İksiri:</strong> Su şişesine Blaze Tozu ve ardından Kırmızı Taş Tozu ekleyin. Savaş gücünüzü artırır.</li>
+                <li><strong>Şifa İksiri:</strong> Su şişesine Kızılağaç Meyvesi ekleyin. Sağlık geri kazandırır.</li>
+            </ul>
+        </div>
+
+        <div class="comment-section">
+            <h2>Yorumlar</h2>
+            <ul class="comments-list" id="comments-list">
+                <!-- Yorumlar buraya eklenecek -->
+            </ul>
+
+            <div class="comment-form">
+                <h2>Bir Yorum Bırakın</h2>
+                <form id="comment-form">
+                    <input type="text" id="name" name="name" placeholder="Adınız" required>
+                    <textarea id="comment" name="comment" placeholder="Yorumunuz" rows="4" required></textarea>
+                    <button type="submit">Gönder</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Minecraft İksir Bilgi Sayfası. Tüm hakları saklıdır.</p>
+    </footer>
+
+    <script>
+        // Basit bir yorum ekleme işlevi
+        document.getElementById('comment-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            var name = document.getElementById('name').value;
+            var comment = document.getElementById('comment').value;
+
+            if (name && comment) {
+                var commentsList = document.getElementById('comments-list');
+                var newComment = document.createElement('li');
+                newComment.innerHTML = '<strong>' + name + ':</strong> ' + comment;
+                commentsList.appendChild(newComment);
+
+                // Formu temizle
+                document.getElementById('comment-form').reset();
+            }
+        });
+    </script>
+</body>
+</html>
